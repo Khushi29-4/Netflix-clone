@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Netflix Home</title>
+
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            NETFLIX
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#">Home</a>
+            <a href="#">TV Shows</a>
+            <a href="#">Movies</a>
+            <a href="#">New & Popular</a>
+            <a href="#" id="myListLink">My List</a>
+
+        </div>
+        <div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search movies..."
+    >
+</div>
+
+        <div class="profile">
+
+            <span id="userEmail"></span>
+
+            <button id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero-home">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                NETFLIX ORIGINAL
+            </p>
+
+            <h1>Stranger Things</h1>
+
+            <p class="description">
+                When a young boy disappears, his friends and family
+                uncover a mystery involving secret experiments,
+                supernatural forces and a strange girl.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="play-button">
+                    ▶ Play Trailer
+                </button>
+
+                <button class="info-button">
+                    ⓘ More Info
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MOVIES
+    ========================== -->
+
+    <main>
+
+    <section class="movie-section">
+
+        <h2>Trending Now</h2>
+
+        <div class="movie-row">
+<div class="movie-card"
+     data-title="Stranger Things"
+     data-description="When a young boy disappears, his friends and family uncover a supernatural mystery."
+     data-year="2025"
+     data-rating="TV-14"
+     data-video="assets/videos/stranger.mp4">
+
+    <img src="assets/images/strangerthings.jpg"
+         alt="Stranger Things">
+
+</div>
+
+
+<div class="movie-card"
+     data-title="Money Heist"
+     data-description="A group of criminals carry out an ambitious heist."
+     data-year="2021"
+     data-rating="TV-MA"
+     data-video="assets/videos/moneyheist.mp4">
+
+    <img src="assets/images/mh.jpg"
+         alt="Money Heist">
+
+</div>
+
+
+<div class="movie-card"
+     data-title="Conjuring"
+     data-description="A family encounters terrifying supernatural events."
+     data-year="2021"
+     data-rating="16+"
+     data-video="assets/videos/conjuring.mp4">
+
+    <img src="assets/images/conj.jpg"
+         alt="Conjuring">
+
+</div>
+            <div class="movie-card" data-title="Squid Game">
+                <img src="assets/images/sg.jpg" alt="Squid Game">
+            </div>
+            <div class="movie-card"
+     data-title="My Life With The Walter Boys"
+     data-description="After losing her family, a teenage girl moves to a small town to live with a large family and finds herself caught between new friendships, family drama, and unexpected romance."
+     data-year="2023"
+     data-rating="TV-14"
+     data-video="assets/videos/mylifewith.mp4">
+
+    <img src="assets/images/my.jpg"
+         alt="My Life With The Walter Boys">
+        </div>
+
+    </section>
+    <section class="movie-section" id="continueWatchingSection">
+
+    <h2>Continue Watching</h2>
+
+    <div class="movie-row" id="continueWatchingRow">
+
+        <p id="emptyContinueWatching">
+            No movies to continue watching.
+        </p>
+
+    </div>
+
+</section>
+<section class="movie-section" id="myListSection">
+
+    <h2>My List</h2>
+
+    <div class="movie-row" id="myListRow">
+
+        <p id="emptyMyList">
+            Your list is empty.
+        </p>
+
+    </div>
+
+</section>
+</main>
+
+<div id="movieModal" class="movie-modal">
+
+    <div class="movie-modal-content">
+
+        <button id="closeModal">×</button>
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalDescription"></p>
+
+        <p id="modalInfo"></p>
+
+       <button class="modal-play" id="playMovie">
+    ▶ Play
+</button>
+<button class="add-list-button" id="addToMyList">
+    + My List
+</button>
+
+    </div>
+
+</div>
+<div id="videoModal" class="video-modal">
+
+    <div class="video-container">
+
+        <button id="closeVideo">×</button>
+
+        <video id="movieVideo" controls>
+
+            <source
+                src="assets/videos/stranger.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support video.
+
+        </video>
+
+    </div>
+
+</div>
+    <script src="home.js"></script>
+
+</body>
+
+</html>
