@@ -1,10 +1,5 @@
 console.log("HOME.JS IS LOADING");
 
-
-// ===============================
-// CHECK LOGIN
-// ===============================
-
 fetch("/api/me")
     .then(response => {
 
@@ -33,9 +28,9 @@ fetch("/api/me")
     });
 
 
-// ===============================
+
 // LOGOUT
-// ===============================
+
 
 document
     .getElementById("logoutButton")
@@ -62,9 +57,9 @@ document
     });
 let selectedMovieVideo = "";
 
-// ===============================
+
 // MOVIE DETAILS
-// ===============================
+
 
 const searchCards =
     document.querySelectorAll(".movie-card");
@@ -121,9 +116,9 @@ searchCards.forEach(function (card) {
 });
 
 
-// ===============================
+
 // CLOSE MOVIE DETAILS
-// ===============================
+
 
 closeModal.addEventListener("click", function () {
 
@@ -416,68 +411,7 @@ async function loadMyList() {
         emptyMyList.style.display = "none";
 
 
-        data.myList.forEach(function (movieData) {
-
-    const movie = document.createElement("div");
-
-    movie.className = "movie-card";
-
-    const image =
-        movieData.image && movieData.image.trim() !== ""
-            ? movieData.image
-            : "assets/images/strangerthings.jpg";
-
-    movie.innerHTML = `
-        <img
-            src="${image}"
-            alt="${movieData.title}"
-        >
-
-        <button class="remove-list-button">
-            ×
-        </button>
-    `;
-
-    const removeButton =
-        movie.querySelector(".remove-list-button");
-
-    removeButton.addEventListener("click", async function (event) {
-
-        event.stopPropagation();
-
-        try {
-
-            const response = await fetch(
-                `/api/mylist/${encodeURIComponent(movieData.title)}`,
-                {
-                    method: "DELETE"
-                }
-            );
-
-            const result = await response.json();
-
-            console.log(result.message);
-
-            if (response.ok) {
-
-                loadMyList();
-
-            }
-
-        } catch (error) {
-
-            console.error(
-                "Remove from My List error:",
-                error
-            );
-
-        }
-
-    });
-
-    myListRow.appendChild(movie);
-
-});
+        
 
     } catch (error) {
 

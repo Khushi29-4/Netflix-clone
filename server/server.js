@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 
@@ -159,13 +159,13 @@ app.post("/api/signup", async (req, res) => {
     } catch (error) {
 
         console.error(
-            "Signup error:",
-            error.message
+            "SIGNUP ERROR:",
+            error
         );
 
         res.status(500).json({
 
-            message: "Server error. Please try again."
+            message: error.message
 
         });
 
@@ -265,7 +265,7 @@ app.post("/api/login", async (req, res) => {
     } catch (error) {
 
         console.error(
-            "Login error:",
+            "LOGIN ERROR:",
             error.message
         );
 
